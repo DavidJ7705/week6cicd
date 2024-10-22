@@ -1,9 +1,6 @@
 package ie.atu.week6cicd;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +16,14 @@ public class ProductController {
     }
     private List<Product> list = new ArrayList<>();
     //creating a class which handles requests and responses
+
+
+    @GetMapping("/getProducts")
+    public List<Product> getProduct()
+    {
+        list = myService.getProduct();
+        return list;
+    }
 
     @PostMapping
     public List<Product> newProduct(@RequestBody Product product)
