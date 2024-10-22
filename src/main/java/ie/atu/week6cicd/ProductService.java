@@ -1,5 +1,6 @@
 package ie.atu.week6cicd;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -15,7 +16,7 @@ public class ProductService {
         return myList;
     }
 
-    public List<Product> addProduct(Product product)
+    public List<Product> addProduct(@Valid  Product product)
     {
         myList.add(product);
         return myList;
